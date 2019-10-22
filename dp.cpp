@@ -1,36 +1,16 @@
-#include <bits/stdc++.h>
-using namespace std;
- 
-int main()
-{
-	int z= 1000000007;
-    int n,m;
-    cin>>n>>m;
-    int ans=0,i=0;
-    
-    int x=2,y=0;
-    for (i=1;i<m;i++)
-    {
-        int t=x;
-        x=x+y;
-        x%=z;
-        y=t;
+    #include <bits/stdc++.h>
+    #define pb push_back
+    #define mp make_pair
+    #define lli long long int
+    using namespace std;
+    lli mod = 1e9+7;
+    lli dp[100005];
+    int main(){
+        lli n,m;
+        cin>>n>>m;
+        dp[0]=2;
+        dp[1]=2;
+        for(lli i=2;i<=100004;i++)dp[i] = (dp[i-1]+dp[i-2])%mod;
+        cout<<(dp[n]+dp[m]-2)%mod;
+        return 0;
     }
-    ans += ((x+y)%z);
-    ans %=z;
-    ans -= 2;
-    
-    x=2,y=0;
-    for (i=1;i<n;i++)
-    {
-        int t=x;
-        x=x+y;
-        x%=z;
-        y=t;
-    }
-    ans += ((x+y)%z);
-    ans %=z;
-    
-    cout<<ans;
-	return 0;
-}
