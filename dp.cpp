@@ -4,7 +4,7 @@
     long long int vd[100005];
     int main()
     {
-        long long int n,m,i,mod = 1e9+7;
+        long long int n,m,i,mod = 1e9+6;
         cin>>n>>m;
         vd[0]=2;
         vd[1]=2;
