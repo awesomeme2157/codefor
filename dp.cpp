@@ -13,5 +13,6 @@
             vd[i] = (vd[i-1]+vd[i-2]) % mod;
         }
         cout<<(vd[n]+vd[m]-2)%mod;
+        cout<<endl;
         return 0;
     }
